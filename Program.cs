@@ -163,7 +163,7 @@ using(var zip = ZipFile.OpenRead(main_zip))
 					if(string.IsNullOrWhiteSpace(inner_entry.Name)) continue;
 
 					if(ignored_dirs.Contains(Path.GetDirectoryName(inner_entry.FullName)!)) continue;
-					if(inner_entry.FullName.Contains("build/") || inner_entry.FullName.Contains("__MACOSX/"))
+					if(inner_entry.FullName.Contains("build/") || inner_entry.FullName.Contains("cmake-build") || inner_entry.FullName.Contains("__MACOSX/"))
 					{
 						if(!slash_build_notice)
 							Console.WriteLine($"\tThey included a build directory, PUNISH!");
